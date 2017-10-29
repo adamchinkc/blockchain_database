@@ -1,6 +1,7 @@
 # Blockchain Database API
 Thin Database Architecture based on Blockchain technology
 
+![](https://cdn-images-1.medium.com/max/720/1*ZUA06XdNnJ7oDh_zLTFm-w.png)
 
 Background
 ---------------------------------------------
