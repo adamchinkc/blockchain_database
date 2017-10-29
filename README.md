@@ -5,6 +5,7 @@ Thin Database Architecture based on Blockchain technology
 Background
 ---------------------------------------------
 When we talk about Blockchain, we always relate it to peer-to-peer network and think that data must be distributed across the network. It will raise concern from people and think that Blockchain would breach the confidentiality of the data.
+
 Actually, the data architecture of Blockchain itself already provides a good solution for securing the data from unauthorized manipulation, given that the server is protected by sufficient controls, such as access control, network and system security control, and better to be in an internal network. 
 
 Therefore, I try to build an database based on the data architecture of Blockchain by using Python, Sqlite and RESTful API framework.
