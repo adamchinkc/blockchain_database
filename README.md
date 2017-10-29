@@ -20,6 +20,59 @@ In the next step, Blockchain Database API will calculate the hash value for the 
 
 To detect any unauthorized change, Blockchain Database API will re-calculate the hash value based on the information of the previous hash, transaction and nonce. If any change is made, the hash value will change and the API can be notified. Therefore, the integrity of the data will be ensured. 
 
+How to use?
+--------------------------------------------
+1. Start the Hash API
+
+```python 
+python hash.py 
+```
+
+2. Start the Nonce API
+
+```python 
+python nonce.py 
+```
+
+3. Start the Main API
+
+```python 
+python main.py 
+```
+
+4. Post the Journal Data to Main API http://127.0.0.1:8000/construct and Get back the Response with nonce and hash
+
+```json 
+data1 = { 	"journal_id": "JE000001", 
+	"entry_date" : "2016-11-06", 
+	"create_time" : "2016-11-06 18:00:00", 
+	"created_by": "Adam",
+	"post_status": "P",
+	"account_code" : "100000",
+	"amount" : 16453.24,
+	"dr_cr" : "C"
+
+}
+```
+
+5. Post the Response to Main API http://127.0.0.1:8000/insert 
+
+```json 
+data1 = { 	"journal_id": "JE000001", 
+	"entry_date" : "2016-11-06", 
+	"create_time" : "2016-11-06 18:00:00", 
+	"created_by": "Adam",
+	"post_status": "P",
+	"account_code" : "100000",
+	"amount" : 16453.24,
+	"dr_cr" : "C",
+  "nonue" : ".....",
+  "hash" : "....."
+}
+```
+
+6. Verify your transaction by Get http://127.0.0.1:8000/verify?id=1
+
 Limitation
 ---------------------------------------------
 Since it is in a centralized architecture, there is a possibility for the attacker, who obtains the administration right, to change  the entire database by recalculating the hash value again. 
