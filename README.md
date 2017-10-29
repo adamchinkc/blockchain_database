@@ -11,9 +11,12 @@ Therefore, I try to build an database based on the data architecture of Blockcha
 
 Objective
 ---------------------------------------------
-Accountability, Confidentially and Integrity
+**Accountability, Confidentially and Integrity**
+
 When  the user create a transaction record, he encrypts the data with its private key and post the data to Blockchain Database API. Blockchain Database API will decrypt the data with the user’s public key.  In this process, the user’s identity has been confirmed. It achieves the objective of accountability and confidentially.
+
 In the next step, Blockchain Database API will calculate the hash value for the transaction with nonce, i.e. random string, and the previous hash. Blockchain Database API will insert the transaction, nonce and hash to the database. 
+
 To detect any unauthorized change, Blockchain Database API will re-calculate the hash value based on the information of the previous hash, transaction and nonce. If any change is made, the hash value will change and the API can be notified. Therefore, the integrity of the data will be ensured. 
 
 Limitation
